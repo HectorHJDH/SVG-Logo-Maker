@@ -2,7 +2,32 @@ const fs = require('fs');
 const inquirer = require('inquirer');
 const shapes = require('./lib/shapes.js');
 
-// Prompt the user for input using inquirer
+// SVG generator function that takes in the user input and returns the logo.svg
+function generateSVG(text, textColor, shape, shapeColor) {
+  let shapeEl;
+
+  // Determines the shape based on the user input
+  if (shape === 'circle') {
+    // Calls the generateCircle function from the shapes.js file
+    shapeEl = shapes.generateCircle(shapeColor);
+  } else if (shape === 'triangle') {
+    // Calls the generateTriangle function from the shapes.js file
+    shapeEl = shapes.generateTriangle(shapeColor);
+  } else if (shape === 'square') {
+    // Calls the generateSquare function from the shapes.js file
+    shapeEl = shapes.generateSquare(shapeColor);
+  } 
+
+  // SVG code generation with the chosen shape and dimensions
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200">
+    ${shapeEl}
+    <text x="50%" y="50%" font-size="46" text-anchor="middle" dominant-baseline="middle" fill="${textColor}">${text}</text>
+    </svg>`;
+
+  return svg;
+}
+
+// Prompts the user for input using inquirer
 inquirer
   .prompt([
     {
