@@ -4,7 +4,7 @@
 
 This week 10 objective is to create in javascript a logo.svg generator using fs, inquirer and jest packages.
 
-Pro-README Generator walkthrough video: https://drive.google.com/file/d/1oc7JToozHVFLzCczMmcCShUKgSAB5STL/view
+SVG Logo Maker walkthrough video: https://drive.google.com/file/d/1oc7JToozHVFLzCczMmcCShUKgSAB5STL/view
 
 Generated SVG example:
 
