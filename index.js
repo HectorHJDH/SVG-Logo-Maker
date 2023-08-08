@@ -1,6 +1,18 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
-const { Circle, Triangle, Square } = require("./lib");
+const Circle = require("./lib/Circle"); // Import the Circle class
+const Square = require("./lib/Square"); // Import the Square class
+const Triangle = require("./lib/Triangle"); // Import the Triangle class
+
+// SVG generator function that takes in the user input and returns the logo.svg
+function generateSVG(text, textColor, shapeInstance) {
+  return `
+    <svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200">
+      ${shapeInstance.render()} <!-- Use the render method of the shape instance -->
+      <text x="50%" y="50%" font-size="46" text-anchor="middle" dominant-baseline="middle" fill="${textColor}">${text}</text>
+    </svg>
+  `;
+}
 
 // Prompts the user for input using inquirer
 inquirer
@@ -29,6 +41,7 @@ inquirer
     },
   ])
   .then((answers) => {
+    // Destructuring the answers object
     const { text, textColor, shape, shapeColor } = answers;
 
     // Create the shape instance based on user input
