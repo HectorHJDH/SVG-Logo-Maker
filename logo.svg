@@ -1,6 +1,6 @@
 
     <svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200">
       <rect x="50" y="50" width="200" height="100" fill="#ffff00" /> <!-- Use the render method of the shape instance -->
-      <text x="50%" y="50%" font-size="46" text-anchor="middle" dominant-baseline="middle" fill="#008000">ZXC</text>
+      <text x="50%" y="50%" font-size="46" text-anchor="middle" dominant-baseline="middle" fill="#008000">zxc</text>
     </svg>
   
